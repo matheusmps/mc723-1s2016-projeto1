@@ -6,7 +6,8 @@ O FFTW é na verdade uma biblioteca de subrotinas em C para computar a transform
 No final, foram criados dois programas, o DFT1D e o DFT1D_IO. O primeiro, calcula as transformações explicadas acima, mas não imprime os resultados obtidos. Dessa forma, o tempo de execução restringe-se as operações matemáticas calculadas pelo processador.  Já o segundo, além de calcular as transformações, imprime no arquivo results.txt os resultados obtidos, o que aumenta o tempo de execução do programa.
 
 ## Por que é bom para medir desempenho?
-O programa está medindo basicamente o tempo de execução de operações matemáticas pelo processador. A maior atividade do processador quando executado esse programa está na Unidade Lógica e Aritmética (ULA). O programa aqui não faz uso de multithreads, utilizando apenas um core do processador.
+O programa mede o tempo de execução de operações matemáticas pelo processador. A maior atividade do processador quando executado está na Unidade Lógica e Aritmética (ULA). Como uma das versões escreve na memória e a outra não, podemos comparar os resultados e chegar a conclusões mais precisas do tempo que leva as operações de escrita na memória e de processamento.
+O programa aqui não faz uso de multithreads, utilizando apenas um core do processador.
 
 ## O que baixar?
 A biblioteca FFTW pode ser obtida no [site oficial do FFTW](http://www.fftw.org). A última versão disponibilizada é a 3.3.4. 
@@ -96,4 +97,4 @@ Depois foi calculado o desempenho de execução do DFT1D_IO, com parâmetro size
 
 Fazendo uma média de 5 medidas, o tempo final foi de **real 16.010s**.
 
-Perceba que o tempo de execução de DFT1D_IO é maior, mesmo que o valor do parâmetro sizeDFT passado seja aproximadamente 23 vezes menor que o de DFT1D. Ou seja, a impressão dos valores em um arquivo.txt demora muito mais do que apenas as operações lógicas executadas.
+Percebemos que o tempo de execução de DFT1D_IO é maior, mesmo que o valor do parâmetro sizeDFT passado seja aproximadamente 23 vezes menor que o de DFT1D. Ou seja, a impressão dos valores em um arquivo.txt é muito mais demorada do que as operações lógicas executadas.
