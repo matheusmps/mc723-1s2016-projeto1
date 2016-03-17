@@ -30,6 +30,8 @@ gcc -o programa programa.c -lfftw3 -lm
 
 As flags _-lfftw3_ e _-lm_ irão linkar a biblioteca fttw3 ao código.
 
+Para facilitar nós já criamos um arquivo Makefile que produz os executáveis dos dois programas DFT1D e DFT1D_IO. Para isso basta utilizar o comando _make_ na raiz do repositório.
+
 ## Como executar
 Ambos os programas, após compilados, podem ser executados com apenas um parâmetro sizeDFT. Esse parâmetro representa o tamanho do vetor de entrada, ou seja, quantos pontos estão definidos no sinal de entrada. Esse parâmetro é passado na própria linha de comando. Assim, o comando para execução dos programas é:
 
@@ -97,4 +99,4 @@ Depois foi calculado o desempenho de execução do DFT1D_IO, com parâmetro size
 
 Fazendo uma média de 5 medidas, o tempo final foi de **real 16.010s**.
 
-Percebemos que o tempo de execução de DFT1D_IO é maior, mesmo que o valor do parâmetro sizeDFT passado seja aproximadamente 23 vezes menor que o de DFT1D. Ou seja, a impressão dos valores em um arquivo.txt é muito mais demorada do que as operações lógicas executadas.
+Percebemos que o tempo de execução de DFT1D_IO é maior, mesmo que o valor do parâmetro sizeDFT passado seja aproximadamente 23 vezes menor que o de DFT1D. Ou seja, a impressão dos valores em um arquivo.txt é muito mais demorada do que as operações lógicas executadas, devido às operações de acesso a memória.
