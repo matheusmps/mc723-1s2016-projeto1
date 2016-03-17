@@ -20,7 +20,7 @@ int main ( int argc, char** argv )
 }
 
 /*
- DFT1D: Executa o FFTW em DFTs complexas unidimensionais.
+ DFT1D_IO: Executa o FFTW em DFTs complexas unidimensionais.
  
  Gera sizeDFT valores complexos aleatórios, guardados como
  um vetor do tipo FFTW_COMPLEX chamado "IN".
